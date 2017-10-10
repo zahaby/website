@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="103 142 682 481" width="682pt" height="481pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.5 
+    <dc:date>2017-10-16 22:05:56 +0000</dc:date>
+  </metadata>
+  <defs>
+    <font-face font-family="Arial" font-size="16" panose-1="2 11 7 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="104.98047" slope="0" x-height="518.5547" cap-height="715.8203" ascent="905.2734" descent="-211.91406" font-weight="bold">
+      <font-face-src>
+        <font-face-name name="Arial-BoldMT"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Arial" font-size="16" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" ascent="905.2734" descent="-211.91406" font-weight="500">
+      <font-face-src>
+        <font-face-name name="ArialMT"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="#7f8080">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_2" viewBox="-9 -4 10 8" markerWidth="10" markerHeight="8" color="#7f8080">
+      <g>
+        <path d="M -8 0 L 0 3 L 0 -3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>V2</title>
+    <g>
+      <title>Layer 1</title>
+      <rect x="604.1052" y="142.5" width="180" height="434" fill="#d9d9d9"/>
+      <rect x="104" y="376.5" width="400" height="200" fill="#d9d9d9"/>
+      <rect x="104" y="142.5" width="400" height="230" fill="#d9d9d9"/>
+      <rect x="147" y="180.5" width="120" height="120" fill="#4285f5"/>
+      <text transform="translate(152 231.73828)" fill="white">
+        <tspan font-family="Arial" font-size="16" font-weight="bold" fill="white" x="14.53125" y="14" textLength="80.9375">API Server</tspan>
+      </text>
+      <rect x="267" y="180.5" width="120" height="120" fill="#4285f5"/>
+      <text transform="translate(272 231.73828)" fill="white">
+        <tspan font-family="Arial" font-size="16" font-weight="bold" fill="white" x="16.777344" y="14" textLength="76.44531">Controller</tspan>
+      </text>
+      <text transform="translate(111 348.7383)" fill="black">
+        <tspan font-family="Arial" font-size="16" font-weight="500" x="0" y="14" textLength="112.94531">Service Catalog</tspan>
+      </text>
+      <text transform="translate(111 381.7383)" fill="black">
+        <tspan font-family="Arial" font-size="16" font-weight="500" x="0" y="14" textLength="120.96094">Kubernetes Core</tspan>
+      </text>
+      <text transform="translate(432.5 348.7383)" fill="black">
+        <tspan font-family="Arial" font-size="16" font-weight="500" x=".6796875" y="14" textLength="38.234375">OSB </tspan>
+        <tspan font-family="Arial" font-size="16" font-weight="500" x="38.03125" y="14" textLength="25.789062">API</tspan>
+      </text>
+      <line x1="424.5" y1="143.5" x2="424.75" y2="373.5" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke-dasharray="4,4"/>
+      <rect x="207" y="419" width="120" height="120" fill="#4285f5"/>
+      <text transform="translate(212 461.47656)" fill="white">
+        <tspan font-family="Arial" font-size="16" font-weight="bold" fill="white" x="10.988281" y="14" textLength="88.02344">Kubernetes</tspan>
+        <tspan font-family="Arial" font-size="16" font-weight="bold" fill="white" x="14.53125" y="31.523438" textLength="80.9375">API Server</tspan>
+      </text>
+      <path d="M 504.05277 241.86808 L 529.13175 221.93418 L 529.1052 232.00014 L 579.0524 232.13192 L 579.079 222.06596 L 604.0524 242.13192 L 578.97344 262.06582 L 579 251.99986 L 529.0528 251.86808 L 529.0262 261.93404 Z" fill="gray"/>
+      <line x1="399.8988" y1="240.15355" x2="414.6012" y2="240.3816" marker-end="url(#FilledArrow_Marker)" marker-start="url(#FilledArrow_Marker_2)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="266.9891" y1="311.8999" x2="266.54607" y2="407.1001" marker-end="url(#FilledArrow_Marker)" marker-start="url(#FilledArrow_Marker_2)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <line x1="504" y1="374.28125" x2="104" y2="374.25" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="266.5" y1="182" x2="266.75" y2="302" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke-dasharray="4,4"/>
+      <rect x="604.2101" y="180.5" width="140" height="120" fill="#4285f5"/>
+      <text transform="translate(609.2101 231.73828)" fill="white">
+        <tspan font-family="Arial" font-size="16" font-weight="bold" fill="white" x="8.519531" y="14" textLength="112.96094">Service Broker</tspan>
+      </text>
+      <text transform="translate(661.8552 581.97656)" fill="black">
+        <tspan font-family="Arial" font-size="16" font-weight="500" x="5.574219" y="14" textLength="57.796875">Service </tspan>
+        <tspan font-family="Arial" font-size="16" font-weight="500" x="2.4609375" y="31.523438" textLength="59.578125">Provider</tspan>
+      </text>
+      <text transform="translate(258.9474 581.97656)" fill="black">
+        <tspan font-family="Arial" font-size="16" font-weight="500" x="4.134627" y="14" textLength="86.28125">Kubernetes </tspan>
+        <tspan font-family="Arial" font-size="16" font-weight="500" x="19.712752" y="31.523438" textLength="50.67969">Cluster</tspan>
+      </text>
+      <path d="M 652.1052 419 L 736.1052 419 C 746.0412 419 754.1052 445.88 754.1052 479 C 754.1052 512.12 746.0412 539 736.1052 539 L 652.1052 539 C 642.1692 539 634.1052 512.12 634.1052 479 C 634.1052 445.88 642.1692 419 652.1052 419" fill="white"/>
+      <text transform="translate(651.1052 470.2383)" fill="black">
+        <tspan font-family="Arial" font-size="16" font-weight="bold" fill="black" x="14.53125" y="14" textLength="56.9375">Service</tspan>
+      </text>
+      <line x1="694.0943" y1="312.1499" x2="693.6513" y2="407.3501" marker-end="url(#FilledArrow_Marker)" marker-start="url(#FilledArrow_Marker_2)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
