@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="66 1472 565 377" width="565pt" height="377pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.5 
+    <dc:date>2017-10-26 21:20:18 +0000</dc:date>
+  </metadata>
+  <defs>
+    <filter id="Shadow" filterUnits="userSpaceOnUse">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="1.308"/>
+      <feOffset in="blur" result="offset" dx="0" dy="2"/>
+      <feFlood flood-color="black" flood-opacity=".5" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in"/>
+    </filter>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -6 14 12" markerWidth="14" markerHeight="12" color="black">
+      <g>
+        <path d="M 11.428568 0 L 0 -4.285713 L 0 4.285713 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Arial" font-size="12" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" ascent="905.2734" descent="-211.91406" font-weight="500">
+      <font-face-src>
+        <font-face-name name="ArialMT"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica" font-size="12" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="522.9492" cap-height="717.28516" ascent="770.0195" descent="-229.98047" font-weight="500">
+      <font-face-src>
+        <font-face-name name="Helvetica"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Arial" font-size="12" panose-1="2 11 7 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="104.98047" slope="0" x-height="518.5547" cap-height="715.8203" ascent="905.2734" descent="-211.91406" font-weight="bold">
+      <font-face-src>
+        <font-face-name name="Arial-BoldMT"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Arial" font-size="16" panose-1="2 11 7 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="104.98047" slope="0" x-height="518.5547" cap-height="715.8203" ascent="905.2734" descent="-211.91406" font-weight="bold">
+      <font-face-src>
+        <font-face-name name="Arial-BoldMT"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>V2b</title>
+    <g>
+      <title>Layer 1</title>
+      <g>
+        <xl:use xl:href="#id125_Graphic" filter="url(#Shadow)"/>
+        <xl:use xl:href="#id126_Graphic" filter="url(#Shadow)"/>
+        <xl:use xl:href="#id134_Graphic" filter="url(#Shadow)"/>
+        <xl:use xl:href="#id129_Graphic" filter="url(#Shadow)"/>
+      </g>
+      <line x1="118.75" y1="1497.456" x2="118.75" y2="1597.456" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line x1="324.25" y1="1497.456" x2="324.25" y2="1847.456" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line x1="529.75" y1="1497.456" x2="529.75" y2="1847.456" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line x1="341.25" y1="1575.8496" x2="502.3641" y2="1618.443" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="389.7558" y="1586.219" width="76" height="25" fill="white"/>
+      <text transform="translate(394.7558 1591.5227)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".09082031" y="11" textLength="24">PUT</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="23.874023" y="11" textLength="42.035156"> binding</tspan>
+      </text>
+      <line x1="515.25" y1="1657.9107" x2="350.17202" y2="1699.6439" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="380.28932" y="1648.044" width="79" height="68" fill="white"/>
+      <text transform="translate(385.2893 1653.2589)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="1.8134766" y="11" textLength="68.70703">coordinates, </tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="3.817383" y="25.392578" textLength="61.365234">credentials,</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="13.822266" y="39.785156" textLength="41.35547">configs,</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="24.829102" y="54.177734" textLength="19.341797">etc.</tspan>
+      </text>
+      <rect x="293.75" y="1710.5152" width="62" height="38" fill="white"/>
+      <text transform="translate(298.75 1715.5152)" fill="black">
+        <tspan font-family="Helvetica" font-size="12" font-weight="500" x="5.984375" y="11" textLength="40.03125">Binding</tspan>
+        <tspan font-family="Helvetica" font-size="12" font-weight="500" x=".32128906" y="25" textLength="51.35742">Resource</tspan>
+      </text>
+      <rect x="293.75" y="1538.0866" width="62" height="38" fill="white"/>
+      <text transform="translate(298.75 1543.0866)" fill="black">
+        <tspan font-family="Helvetica" font-size="12" font-weight="500" x="5.984375" y="11" textLength="40.03125">Binding</tspan>
+        <tspan font-family="Helvetica" font-size="12" font-weight="500" x=".32128906" y="25" textLength="51.35742">Resource</tspan>
+      </text>
+      <line x1="133.5" y1="1556.5866" x2="272.0814" y2="1557.479" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="168.77588" y="1544.5875" width="85" height="25" fill="white"/>
+      <text transform="translate(173.77588 1549.8912)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".2548828" y="11" textLength="32.671875">POST</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="32.70996" y="11" textLength="42.035156"> binding</tspan>
+      </text>
+      <line x1="311" y1="1756.1197" x2="145.92202" y2="1797.8529" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="181.03932" y="1753.253" width="69" height="54" fill="white"/>
+      <text transform="translate(186.03932 1758.6641)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="7.826172" y="11" textLength="43.347656">Service,</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="10.492188" y="25.392578" textLength="38.015625">Secret,</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".484375" y="39.785156" textLength="58.03125">ConfigMap</tspan>
+      </text>
+      <rect x="279" y="1472.5" width="101" height="39" fill="white"/>
+      <text transform="translate(284 1477.6074)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".4794922" y="11" textLength="90.04102">Service Catalog</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x="15.148438" y="25.392578" textLength="60.703125">API Server</tspan>
+      </text>
+      <rect x="488" y="1472.5" width="95" height="25" fill="white"/>
+      <text transform="translate(493 1477.8037)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".13964844" y="11" textLength="84.7207">Service Broker</tspan>
+      </text>
+      <rect x="66.5" y="1472.5" width="116" height="25" fill="white"/>
+      <text transform="translate(71.5 1477.8037)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".3095703" y="11" textLength="105.38086">Service Consumer</tspan>
+      </text>
+      <line x1="118.75" y1="1737.456" x2="118.75" y2="1847.456" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <rect x="80.75" y="1712.5" width="77" height="39" fill="white"/>
+      <text transform="translate(85.75 1717.6074)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".49121094" y="11" textLength="66.01758">Kubernetes</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x="19.830078" y="25.392578" textLength="27.339844">Core</tspan>
+      </text>
+      <g id="id125_Graphic">
+        <rect x="204.53932" y="1515.5231" width="22" height="25" fill="white"/>
+        <rect x="204.53932" y="1515.5231" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(209.53932 1520.8268)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">1.</tspan>
+        </text>
+      </g>
+      <g id="id126_Graphic">
+        <rect x="408.7893" y="1556.5866" width="22" height="25" fill="white"/>
+        <rect x="408.7893" y="1556.5866" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(413.7893 1561.8904)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">2.</tspan>
+        </text>
+      </g>
+      <g id="id134_Graphic">
+        <rect x="408.7893" y="1717.0152" width="22" height="25" fill="white"/>
+        <rect x="408.7893" y="1717.0152" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(413.7893 1722.319)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">3.</tspan>
+        </text>
+      </g>
+      <path d="M 558 1619.956 L 617.5 1619.956 C 624.538 1619.956 630.25 1629.476 630.25 1641.206 C 630.25 1652.936 624.538 1662.456 617.5 1662.456 L 558 1662.456 C 550.962 1662.456 545.25 1652.936 545.25 1641.206 C 545.25 1629.476 550.962 1619.956 558 1619.956" fill="white"/>
+      <path d="M 558 1619.956 L 617.5 1619.956 C 624.538 1619.956 630.25 1629.476 630.25 1641.206 C 630.25 1652.936 624.538 1662.456 617.5 1662.456 L 558 1662.456 C 550.962 1662.456 545.25 1652.936 545.25 1641.206 C 545.25 1629.476 550.962 1619.956 558 1619.956" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <text transform="translate(558.75 1632.4443)" fill="black">
+        <tspan font-family="Arial" font-size="16" font-weight="bold" x=".53125" y="14" textLength="56.9375">Service</tspan>
+      </text>
+      <g id="id129_Graphic">
+        <rect x="204.53932" y="1808.7242" width="22" height="25" fill="white"/>
+        <rect x="204.53932" y="1808.7242" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(209.53932 1814.028)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">4.</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="66 2009 565 327" width="565pt" height="327pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata> Produced by OmniGraffle 7.5 
+    <dc:date>2017-10-26 22:03:50 +0000</dc:date>
+  </metadata>
+  <defs>
+    <filter id="Shadow" filterUnits="userSpaceOnUse">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="1.308"/>
+      <feOffset in="blur" result="offset" dx="0" dy="2"/>
+      <feFlood flood-color="black" flood-opacity=".5" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in"/>
+    </filter>
+    <font-face font-family="Helvetica" font-size="12" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="522.9492" cap-height="717.28516" ascent="770.0195" descent="-229.98047" font-weight="500">
+      <font-face-src>
+        <font-face-name name="Helvetica"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" viewBox="-1 -6 14 12" markerWidth="14" markerHeight="12" color="black">
+      <g>
+        <path d="M 11.428568 0 L 0 -4.285713 L 0 4.285713 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Arial" font-size="12" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" ascent="905.2734" descent="-211.91406" font-weight="500">
+      <font-face-src>
+        <font-face-name name="ArialMT"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Arial" font-size="12" panose-1="2 11 7 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="104.98047" slope="0" x-height="518.5547" cap-height="715.8203" ascent="905.2734" descent="-211.91406" font-weight="bold">
+      <font-face-src>
+        <font-face-name name="Arial-BoldMT"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Arial" font-size="16" panose-1="2 11 7 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="104.98047" slope="0" x-height="518.5547" cap-height="715.8203" ascent="905.2734" descent="-211.91406" font-weight="bold">
+      <font-face-src>
+        <font-face-name name="Arial-BoldMT"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <title>V2b</title>
+    <g>
+      <title>Layer 1</title>
+      <g>
+        <xl:use xl:href="#id153_Graphic" filter="url(#Shadow)"/>
+        <xl:use xl:href="#id154_Graphic" filter="url(#Shadow)"/>
+        <xl:use xl:href="#id164_Graphic" filter="url(#Shadow)"/>
+        <xl:use xl:href="#id167_Graphic" filter="url(#Shadow)"/>
+        <xl:use xl:href="#id168_Graphic" filter="url(#Shadow)"/>
+      </g>
+      <line x1="118.75" y1="2033.956" x2="118.75" y2="2333.956" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line x1="324.25" y1="2033.956" x2="324.25" y2="2333.956" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <line x1="529.75" y1="2033.956" x2="529.75" y2="2333.956" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <rect x="293.75" y="2074.5866" width="62" height="38" fill="white"/>
+      <text transform="translate(298.75 2079.5866)" fill="black">
+        <tspan font-family="Helvetica" font-size="12" font-weight="500" x="5.984375" y="11" textLength="40.03125">Binding</tspan>
+        <tspan font-family="Helvetica" font-size="12" font-weight="500" x=".32128906" y="25" textLength="51.35742">Resource</tspan>
+      </text>
+      <line x1="133.5" y1="2093.0866" x2="272.0814" y2="2093.979" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="151.77671" y="2081.023" width="99" height="25" fill="white"/>
+      <text transform="translate(156.7767 2086.3268)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".14160156" y="11" textLength="88.7168">DELETE binding</tspan>
+      </text>
+      <rect x="279" y="2009" width="101" height="39" fill="white"/>
+      <text transform="translate(284 2014.1074)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".4794922" y="11" textLength="90.04102">Service Catalog</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x="15.148438" y="25.392578" textLength="60.703125">API Server</tspan>
+      </text>
+      <rect x="488" y="2009" width="95" height="25" fill="white"/>
+      <text transform="translate(493 2014.3037)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".13964844" y="11" textLength="84.7207">Service Broker</tspan>
+      </text>
+      <rect x="66.5" y="2009" width="116" height="25" fill="white"/>
+      <text transform="translate(71.5 2014.3037)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="bold" x=".3095703" y="11" textLength="105.38086">Service Consumer</tspan>
+      </text>
+      <g id="id153_Graphic">
+        <rect x="198.8721" y="2276.5288" width="22" height="25" fill="white"/>
+        <rect x="198.8721" y="2276.5288" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(203.8721 2281.8325)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">5.</tspan>
+        </text>
+      </g>
+      <g id="id154_Graphic">
+        <rect x="198.8721" y="2051.6045" width="22" height="25" fill="white"/>
+        <rect x="198.8721" y="2051.6045" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(203.8721 2056.9082)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">1.</tspan>
+        </text>
+      </g>
+      <path d="M 558 2155 L 617.5 2155 C 624.538 2155 630.25 2164.52 630.25 2176.25 C 630.25 2187.98 624.538 2197.5 617.5 2197.5 L 558 2197.5 C 550.962 2197.5 545.25 2187.98 545.25 2176.25 C 545.25 2164.52 550.962 2155 558 2155" fill="white"/>
+      <path d="M 558 2155 L 617.5 2155 C 624.538 2155 630.25 2164.52 630.25 2176.25 C 630.25 2187.98 624.538 2197.5 617.5 2197.5 L 558 2197.5 C 550.962 2197.5 545.25 2187.98 545.25 2176.25 C 545.25 2164.52 550.962 2155 558 2155" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" stroke-dasharray="4,4"/>
+      <text transform="translate(558.75 2167.4883)" fill="black">
+        <tspan font-family="Arial" font-size="16" font-weight="bold" x=".53125" y="14" textLength="56.9375">Service</tspan>
+      </text>
+      <line x1="308.25" y1="2238.8955" x2="143.17202" y2="2280.6287" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="179.78932" y="2250.5288" width="66" height="25" fill="white"/>
+      <text transform="translate(184.78932 2255.8325)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".32617188" y="11" textLength="55.347656">DELETED</tspan>
+      </text>
+      <line x1="348.25" y1="2115.641" x2="509.3641" y2="2158.2343" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="385.2558" y="2126.0103" width="99" height="25" fill="white"/>
+      <text transform="translate(390.2558 2131.314)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".14160156" y="11" textLength="88.7168">DELETE binding</tspan>
+      </text>
+      <g id="id164_Graphic">
+        <rect x="408.7893" y="2092.624" width="22" height="25" fill="white"/>
+        <rect x="408.7893" y="2092.624" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(413.7893 2097.9277)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">2.</tspan>
+        </text>
+      </g>
+      <line x1="516.5" y1="2192.4385" x2="351.42202" y2="2234.1717" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="388.5393" y="2204.0718" width="65" height="25" fill="white"/>
+      <text transform="translate(393.5393 2209.3755)" fill="black">
+        <tspan font-family="Arial" font-size="12" font-weight="500" x=".265625" y="11" textLength="31.330078">HTTP</tspan>
+        <tspan font-family="Arial" font-size="12" font-weight="500" x="31.378906" y="11" textLength="23.35547"> 202</tspan>
+      </text>
+      <g id="id167_Graphic">
+        <rect x="410.0393" y="2228.2636" width="22" height="25" fill="white"/>
+        <rect x="410.0393" y="2228.2636" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(415.0393 2233.5673)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">4.</tspan>
+        </text>
+      </g>
+      <g id="id168_Graphic">
+        <rect x="576.75" y="2121.5" width="22" height="25" fill="white"/>
+        <rect x="576.75" y="2121.5" width="22" height="25" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(581.75 2126.8037)" fill="black">
+          <tspan font-family="Arial" font-size="12" font-weight="500" x=".9960938" y="11" textLength="10.007812">3.</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="103 142 682 481" width="682pt" height="481pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-117 142 902 481" width="902pt" height="481pt" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata> Produced by OmniGraffle 7.5 
-    <dc:date>2017-10-16 22:05:56 +0000</dc:date>
+    <dc:date>2017-10-26 22:35:53 +0000</dc:date>
   </metadata>
   <defs>
     <font-face font-family="Arial" font-size="16" panose-1="2 11 7 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="104.98047" slope="0" x-height="518.5547" cap-height="715.8203" ascent="905.2734" descent="-211.91406" font-weight="bold">
@@ -25,6 +25,16 @@
         <path d="M -8 0 L 0 3 L 0 -3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
       </g>
     </marker>
+    <font-face font-family="Arial" font-size="10" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" ascent="905.2734" descent="-211.91406" font-weight="500">
+      <font-face-src>
+        <font-face-name name="ArialMT"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="500">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
   </defs>
   <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
     <title>V2</title>
@@ -79,6 +89,18 @@
         <tspan font-family="Arial" font-size="16" font-weight="bold" fill="black" x="14.53125" y="14" textLength="56.9375">Service</tspan>
       </text>
       <line x1="694.0943" y1="312.1499" x2="693.6513" y2="407.3501" marker-end="url(#FilledArrow_Marker)" marker-start="url(#FilledArrow_Marker_2)" stroke="#7f8080" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <rect x="180" y="193.5" width="60" height="30" fill="white"/>
+      <text transform="translate(185 197.17285)" fill="black">
+        <tspan font-family="Arial" font-size="10" font-weight="500" x="10.273438" y="9" textLength="32.231445">Broker </tspan>
+        <tspan font-family="Arial" font-size="10" font-weight="500" x="3.6010742" y="20.327148" textLength="42.79785">Resource</tspan>
+      </text>
+      <path d="M -116.10519 240.5 L -86.10519 180.5 L -26.105192 180.5 L 3.8948083 240.5 L -26.105192 300.5 L -86.10519 300.5 Z" fill="white"/>
+      <path d="M -116.10519 240.5 L -86.10519 180.5 L -26.105192 180.5 L 3.8948083 240.5 L -26.105192 300.5 L -86.10519 300.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <text transform="translate(-111.10519 222.052)" fill="black">
+        <tspan font-family="Helvetica Neue" font-size="16" font-weight="500" fill="black" x="28.488" y="15" textLength="57.472">Service </tspan>
+        <tspan font-family="Helvetica Neue" font-size="16" font-weight="500" fill="black" x="17.952" y="33.448" textLength="74.096">Consumer</tspan>
+      </text>
+      <path d="M 3.947578 240.36808 L 29.02656 220.43418 L 29 230.50014 L 78.94723 230.63192 L 78.97379 220.56596 L 103.94723 240.63192 L 78.86825 260.56582 L 78.89481 250.49986 L 28.947578 250.36808 L 28.92102 260.43404 Z" fill="gray"/>
     </g>
   </g>
 </svg>
