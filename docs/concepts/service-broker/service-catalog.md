@@ -102,7 +102,7 @@ controller connects to the corresponding broker server to obtain a list of
 service offerings. A new `ServiceClass` resource will automatically be created
 for each.
 * `ServiceInstance`: A provisioned instance of a `ServiceClass`. These are created
-by cluster users who wish to make a new concrete **instance** of some **type** of
+by cluster users who wish to make a new concrete *instance* of some *type* of
 managed service to make that available for use by one or more in-cluster
 applications. When a new `ServiceInstance` resource is created, the service catalog
 controller will connect to the appropriate broker server and instruct it to
@@ -119,7 +119,7 @@ the service instance. Such `Secret`s can be mounted into pods as usual.
 {% capture whatsnext %}
 * Explore the [kubernetes-incubator/service-catalog](https://github.com/kubernetes-incubator/service-catalog) project.
 * View [sample service brokers](https://github.com/openservicebrokerapi/servicebroker/blob/master/gettingStarted.md#sample-service-brokers).
-* Learn how to [Provision and bind an external Service with Service Catalog](/docs/tasks/service-catalog/provision-bind-service/).
+* Learn how to [Provision and bind an external Service with Service Catalog](/docs/tasks/service-catalog/provision-bind-external-service/).
 
 {% endcapture %}
 
