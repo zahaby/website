@@ -22,7 +22,7 @@ Using Service Catalog, the application developer can browse the list of Services
 
 ## Architecture
 
-Service Catalog is built on the [Open Service Broker API](https://github.com/openservicebrokerapi/servicebroker) and consists of its own API Server and Controller, outside of the Kubernetes Core. It communicates with Service Brokers via the OSB API and serves as an intermediary for the Kubernetes API Server in order to negotiate the initial provisioning and return the information needed for the application to use the Service.
+Service Catalog is built on the [Open Service Broker API](https://github.com/openservicebrokerapi/servicebroker) and consists of its own API Server and Controller, outside of the Kubernetes Core. It communicates with Service Brokers via the OSB API and serves as an intermediary for the Kubernetes API Server in order to negotiate the initial provisioning and return the information needed for the application to use the Service.  
 
 ![Service Catalog Architecture](/images/docs/service-catalog-architecture.svg)
 
