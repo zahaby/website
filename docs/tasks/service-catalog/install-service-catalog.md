@@ -13,8 +13,7 @@ approvers:
 
 
 {% capture prerequisites %}
-* {% include task-tutorial-prereqs.md %}
-* Understand key usage concepts of [Service Catalog](/docs/concepts/service-broker/service-catalog/).
+* Understand key concepts of [Service Catalog](/docs/concepts/service-catalog/).
 
 {% endcapture %}
 
@@ -32,10 +31,7 @@ Cras eget quam iaculis, viverra nunc at, venenatis dui. Curabitur accumsan arcu 
 
 
 {% capture whatsnext %}
-* Learn how to [Provision and bind an external Service with Service Catalog](/docs/tasks/service-catalog/provision-bind-external-service/).
-* Explore the [kubernetes-incubator/service-catalog](https://github.com/kubernetes-incubator/service-catalog) project.
-* View [sample service brokers](https://github.com/openservicebrokerapi/servicebroker/blob/master/gettingStarted.md#sample-service-brokers).
-
+* Learn how to [provision and bind an external Service with Service Catalog](/docs/tasks/service-catalog/provision-bind-external-service/).
 
 {% endcapture %}
 

@@ -11,9 +11,8 @@ approvers:
 
 
 {% capture prerequisites %}
-* {% include task-tutorial-prereqs.md %}
-* [Install Service Catalog](/docs/tasks/service-broker/install-service-broker.md) in your Kubernetes cluster.
-* Understand key usage concepts of [Service Catalog](/docs/concepts/service-broker/service-catalog/).
+* [Install Service Catalog](/docs/tasks/service-catalog/install-service-catalog/) in your Kubernetes cluster.
+* Understand key concepts of [Service Catalog](/docs/concepts/service-catalog/).
 
 
 {% endcapture %}
@@ -32,8 +31,8 @@ Cras eget quam iaculis, viverra nunc at, venenatis dui. Curabitur accumsan arcu 
 
 
 {% capture whatsnext %}
-* Explore the [kubernetes-incubator/service-catalog](https://github.com/kubernetes-incubator/service-catalog) project.
 * View [sample service brokers](https://github.com/openservicebrokerapi/servicebroker/blob/master/gettingStarted.md#sample-service-brokers).
+* Explore the [kubernetes-incubator/service-catalog](https://github.com/kubernetes-incubator/service-catalog) project.
 
 {% endcapture %}
 

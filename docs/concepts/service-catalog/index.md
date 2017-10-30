@@ -117,9 +117,10 @@ the service instance. Such `Secret`s can be mounted into pods as usual.
 
 
 {% capture whatsnext %}
-* Explore the [kubernetes-incubator/service-catalog](https://github.com/kubernetes-incubator/service-catalog) project.
+* [Install Service Catalog](/docs/tasks/service-catalog/install-service-catalog/) in your Kubernetes cluster.
+* Learn how to [provision and bind an external Service with Service Catalog](/docs/tasks/service-catalog/provision-bind-external-service/).
 * View [sample service brokers](https://github.com/openservicebrokerapi/servicebroker/blob/master/gettingStarted.md#sample-service-brokers).
-* Learn how to [Provision and bind an external Service with Service Catalog](/docs/tasks/service-catalog/provision-bind-external-service/).
+* Explore the [kubernetes-incubator/service-catalog](https://github.com/kubernetes-incubator/service-catalog) project.
 
 {% endcapture %}
 
