@@ -108,6 +108,7 @@ toc:
   - docs/tasks/access-kubernetes-api/migrate-third-party-resource.md
   - docs/tasks/access-kubernetes-api/configure-aggregation-layer.md
   - docs/tasks/access-kubernetes-api/setup-extension-api-server.md
+  - docs/tasks/service-catalog/install-service-catalog.md
   - docs/tasks/service-catalog/provision-bind-external-service.md
 
 - title: TLS

@@ -1,20 +1,20 @@
 ---
-title: Provision and bind an external Service with Service Catalog
+title: Install Service Catalog
 approvers:
 - chenopis
 ---
 
 {% capture overview %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tempus urna, id varius nisl. Curabitur blandit justo tellus, ac tempor leo volutpat nec. Curabitur risus dui, pulvinar in congue nec, pretium non nunc. Sed convallis turpis turpis, at porttitor metus porta vitae. Nullam nec sagittis turpis. Vestibulum nec risus quis eros placerat convallis ut id dui. Morbi convallis hendrerit sapien sed luctus. In volutpat nisi quam, at eleifend elit tempor eu. Pellentesque porta vel dolor imperdiet fermentum. In massa lectus, blandit vitae quam sed, aliquet tincidunt lectus.
+{{ site.data.glossary.[service-catalog].long-description | markdownify }}
+
+
 
 {% endcapture %}
 
 
 {% capture prerequisites %}
 * {% include task-tutorial-prereqs.md %}
-* [Install Service Catalog](/docs/tasks/service-broker/install-service-broker.md) in your Kubernetes cluster.
 * Understand key usage concepts of [Service Catalog](/docs/concepts/service-broker/service-catalog/).
-
 
 {% endcapture %}
 
@@ -32,8 +32,10 @@ Cras eget quam iaculis, viverra nunc at, venenatis dui. Curabitur accumsan arcu 
 
 
 {% capture whatsnext %}
+* Learn how to [Provision and bind an external Service with Service Catalog](/docs/tasks/service-catalog/provision-bind-external-service/).
 * Explore the [kubernetes-incubator/service-catalog](https://github.com/kubernetes-incubator/service-catalog) project.
 * View [sample service brokers](https://github.com/openservicebrokerapi/servicebroker/blob/master/gettingStarted.md#sample-service-brokers).
+
 
 {% endcapture %}
 
