@@ -5,7 +5,7 @@ approvers:
 ---
 
 {% capture overview %}
-{% include templates/glossary/snippet.md term="service-catalog" length="long" %}
+{% include templates/glossary/snippet.md term="service-catalog" length="all" %}
 
 {% endcapture %}
 

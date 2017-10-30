@@ -5,7 +5,7 @@ approvers:
 ---
 
 {% capture overview %}
-{{ site.data.glossary.[service-catalog].long-description | markdownify }}
+{% include templates/glossary/snippet.md term="service-catalog" length="long" %}
 
 
 

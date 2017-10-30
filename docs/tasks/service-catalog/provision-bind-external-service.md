@@ -5,7 +5,7 @@ approvers:
 ---
 
 {% capture overview %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper tempus urna, id varius nisl. Curabitur blandit justo tellus, ac tempor leo volutpat nec. Curabitur risus dui, pulvinar in congue nec, pretium non nunc. Sed convallis turpis turpis, at porttitor metus porta vitae. Nullam nec sagittis turpis. Vestibulum nec risus quis eros placerat convallis ut id dui. Morbi convallis hendrerit sapien sed luctus. In volutpat nisi quam, at eleifend elit tempor eu. Pellentesque porta vel dolor imperdiet fermentum. In massa lectus, blandit vitae quam sed, aliquet tincidunt lectus.
+{% include templates/glossary/snippet.md term="service-catalog" length="long" %}
 
 {% endcapture %}
 
