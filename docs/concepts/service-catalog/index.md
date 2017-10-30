@@ -16,7 +16,6 @@ approvers:
 An [Application Developer](/docs/reference/glossary/?user-type=true#term-application-developer) wants to use a datastore, such as MySQL, as part of their application running in a Kubernetes cluster. However, they do not want to deal with the overhead of setting one up and administrating it themselves. Fortunately, there is a cloud provider that offers MySQL databases as a *Service* via a *Service Broker*.
 
 A *Service Broker*, as defined by the [Open Service Broker API spec](https://github.com/openservicebrokerapi/servicebroker/blob/v2.13/spec.md), is an endpoint that manages the lifecycle of a set of Services, where a *Service* is a managed software offering that can be used by an application and is typically available via HTTP REST endpoints.
-{: .note}
 
 Using Service Catalog, the application developer can browse the list of Services through the Service Broker, provision a MySQL database instance, and bind with it to get the configuration and credentials necessary for the application to utilize the database.
 
@@ -25,6 +24,8 @@ Using Service Catalog, the application developer can browse the list of Services
 Service Catalog is built on the [Open Service Broker API](https://github.com/openservicebrokerapi/servicebroker) and consists of its own API Server and Controller, outside of the Kubernetes Core. It communicates with Service Brokers via the OSB API and serves as an intermediary for the Kubernetes API Server in order to negotiate the initial provisioning and return the information needed for the application to use the Service.  
 
 ![Service Catalog Architecture](/images/docs/service-catalog-architecture.svg)
+
+The *Service Consumer* is the application deployed within Kubernetes that connects with and uses the Service after Service Catalog has dealt with the initial provisioning and binding of the Service.
 
 ## Usage
 
@@ -38,16 +39,22 @@ The main Service Catalog operations that can be performed are:
 
 ### Listing Services
 
-![List Services](/images/docs/service-catalog-list.svg){:height="80%" width="80%"}
+The Open Service Broker API provides a `GET catalog` method to discover and list Services available from a Service Broker. Service Catalog uses this method to query and store that information as a local ServiceClass Resource, which is available to the Service Consumer.
+
+The flow of API calls is:
 
 1. The Catalog Operator must first add Broker Resources to the Service Catalog API Server. These resources identify available Service Brokers and point to their URL endpoints.
 1. Service Catalog then requests a list of Services from the Service Broker.
 1. The Service Broker returns a list of Services to the ServiceClass resource, which is created and persisted in the Service Catalog API Server.
 1. The Service Consumer can then locally query the ServiceClass Resource for a list of available Services.
 
-### Provisioning a new Service
+![List Services](/images/docs/service-catalog-list.svg){:height="80%" width="80%"}
 
-![Provision a Service](/images/docs/service-catalog-provision.svg){:height="80%" width="80%"}
+### Setting up a Service
+
+*Provision* and *Bind* are used, in that order, to contact a Service Broker, setup a new instance of a Service, and get the information necessary for the Service Consumer to connect with and utilize the Service.
+
+#### Provisioning a new Service
 
 1. The Service Consumer provisions a new instance by sending a POST command to the Service Catalog API Server, which creates and persists an Instance Resource.
 1. Service Catalog then requests an instance from the Service Broker by sending an PUT command.
@@ -55,22 +62,23 @@ The main Service Catalog operations that can be performed are:
 1. If the creation was successful, the Service Broker returns an HTTP 200 response.
 1. The Service Consumer can then check the status of the instance to see if it is ready.
 
-### Binding to a Service
+![Provision a Service](/images/docs/service-catalog-provision.svg){:height="80%" width="80%"}
 
-![Bind to a Service](/images/docs/service-catalog-bind.svg){:height="80%" width="80%"}
+#### Binding to a Service
 
 1. The Service Consumer requests a binding to the instance by sending a POST command to the Service Catalog API Server, which creates and persists a Binding Resource.
 1. Service Catalog in turn requests a binding from the Service Broker using a PUT command.
 1. The Service Broker then returns provider-specific information, such as coordinates, credentials, configs, necessary for Kubernetes to connect and access the Service instance.
 1. The binding information and credentials are delivered to the Kubernetes API Server as a set of Kubernetes objects, such as a Service, Secret, ConfigMap, or Pod Preset.
 
+![Bind to a Service](/images/docs/service-catalog-bind.svg){:height="80%" width="80%"}
+
+
 ### Performing cleanup
 
-Once a Service instance is no longer needed, it can be released and cleaned up by using the Unbind and Deprovision operations.
+Once a Service instance is no longer needed, it can be released and cleaned up by using  the *Unbind* and *Deprovision* operations.
 
 #### Unbinding the instance
-
-![Unbind the instance](/images/docs/service-catalog-unbind.svg){:height="80%" width="80%"}
 
 1. The Service Consumer sends a DELETE command to Service Catalog API Server.
 1. Service Catalog in turn sends a DELETE command to the Service Broker.
@@ -78,15 +86,17 @@ Once a Service instance is no longer needed, it can be released and cleaned up b
 1. The Service Broker returns an HTTP 202 response, which triggers the Service Catalog Controller to remove any corresponding binding resources from Kubernetes and run any finalization tasks.
 1. The Service Catalog API Server deletes the Binding Resource and returns a response to the Service Consumer.
 
-#### Deprovisioning the instance
+![Unbind the instance](/images/docs/service-catalog-unbind.svg){:height="80%" width="80%"}
 
-![Deprovision the instance](/images/docs/service-catalog-deprovision.svg){:height="80%" width="80%"}
+#### Deprovisioning the instance
 
 1. The Service Consumer can then send a DELETE command to the Service Catalog API Server to deprovision the Service instance.
 1. Service Catalog in turn sends a DELETE command to the Service Broker.
 1. The Service Broker deletes the Service instance and performs its own cleanup procedure.
 1. The Service Broker returns an HTTP 202 response, which triggers the Service Catalog Controller run any finalization tasks.
 1. The Service Catalog API Server deletes the Instance Resource and returns a response to the Service Consumer.
+
+![Deprovision the instance](/images/docs/service-catalog-deprovision.svg){:height="80%" width="80%"}
 
 ## API Resources
 
