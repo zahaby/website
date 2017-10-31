@@ -7,6 +7,10 @@ approvers:
 {% capture overview %}
 {% include templates/glossary/snippet.md term="service-catalog" length="long" %}
 
+Once Service Catalog has been installed in your Kubernetes cluster, you can add a Service Broker, discover its available Services, provision a Service Instance, and create a Service Binding so that your application, which is the *Service Consumer*, can utilize the Service.
+
+This task demonstrates the steps involved in setting up and using an external Service through Service Catalog.
+
 {% endcapture %}
 
 
@@ -19,13 +23,37 @@ approvers:
 
 
 {% capture steps %}
-Sed mollis sit amet odio nec molestie. Donec mauris leo, vestibulum sit amet mauris eget, tristique facilisis ipsum. Quisque in lectus at felis faucibus semper vitae accumsan ante. Duis vulputate congue metus non ultrices. Proin semper augue eu libero sodales, vel faucibus lorem imperdiet. Quisque eu convallis tortor. Nullam magna magna, commodo sit amet nibh ac, porta pharetra tortor. In sed purus cursus, venenatis enim at, iaculis lorem. Praesent elementum, mi et pretium aliquam, felis mauris sagittis purus, ac convallis odio risus eu quam. Proin eu magna laoreet, egestas turpis eu, vulputate ligula.
+## Add a Broker Resource
 
-{% endcapture %}
+Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
 
+## Discover Service Brokers
 
-{% capture discussion %}
-Cras eget quam iaculis, viverra nunc at, venenatis dui. Curabitur accumsan arcu vel ligula condimentum, in sagittis enim tempor. In faucibus et nisl vitae egestas. Donec et ullamcorper massa. Duis a neque felis. Sed sit amet dictum orci. Nullam dapibus lectus ut hendrerit sollicitudin. Suspendisse feugiat luctus purus, eu mollis nibh facilisis vitae. Integer lobortis nibh bibendum nisl elementum pellentesque. Duis eu tortor ac nibh dictum pretium eu vel nisl. Vestibulum molestie auctor varius. Cras eleifend nunc vel sollicitudin ornare.
+Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
+
+## Discover available Services
+
+It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+
+## Provision a Service Instance
+
+Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
+
+## Create a Service Binding 
+
+The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.
+
+## Use the Service Binding
+
+When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.
+
+## Test the application
+
+Pityful a rethoric question ran over her cheek, then she continued her way. On her way she met a copy.
+
+## Unbind and deprovision the Service Instance
+
+The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. 
 
 {% endcapture %}
 
