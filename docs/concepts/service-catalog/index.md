@@ -13,48 +13,105 @@ approvers:
 {% capture body %}
 ## Example use case
 
-An [Application Developer](/docs/reference/glossary/?user-type=true#term-application-developer) wants to use a datastore, such as MySQL, as part of their application running in a Kubernetes cluster. However, they do not want to deal with the overhead of setting one up and administrating it themselves. Fortunately, there is a cloud provider that offers MySQL databases as a *Service* via a *Service Broker*.
+An [Application Developer](/docs/reference/glossary/?user-type=true#term-application-developer) wants to use a datastore, such as MySQL, as part of their application running in a Kubernetes cluster.
+However, they do not want to deal with the overhead of setting one up and administrating it themselves.
+Fortunately, there is a cloud provider that offers MySQL databases as a *Managed Service* through their *Service Broker*.
 
-A *Service Broker*, as defined by the [Open Service Broker API spec](https://github.com/openservicebrokerapi/servicebroker/blob/v2.13/spec.md), is an endpoint that manages the lifecycle of a set of Services, where a *Service* is a managed software offering that can be used by an application and is typically available via HTTP REST endpoints.
+A *Service Broker*, as defined by the [Open Service Broker API spec](https://github.com/openservicebrokerapi/servicebroker/blob/v2.13/spec.md), is an endpoint for a set of Managed Services offered and maintained by a third-party, which could be a cloud provider such as AWS, GCP, or Azure.
+Some examples of *Managed Services* are Azure SQL Database, Amazon EC2, and Google Cloud Pub/Sub, but they can be any software offering that can be used by an application, typically available via HTTP REST endpoints.
+{: .note}
 
-Using Service Catalog, the application developer can browse the list of Services through the Service Broker, provision a MySQL database instance, and bind with it to get the configuration and credentials necessary for the application to utilize the database.
+Using Service Catalog, the Cluster Operator can browse the list of Managed Services offered by a Service Broker, provision a MySQL database instance, and bind with it to make it available to the application within the Kubernetes cluster.
+The Application Developer therefore does not need to concern themselves with the implementation details or management of the database.
+Their application can simply use it as a service.
 
 ## Architecture
 
-Service Catalog is built on the [Open Service Broker API](https://github.com/openservicebrokerapi/servicebroker) and consists of its own API Server and Controller, outside of the Kubernetes Core. It communicates with Service Brokers via the OSB API and serves as an intermediary for the Kubernetes API Server in order to negotiate the initial provisioning and return the information needed for the application to use the Service.  
+Service Catalog is built on the [Open Service Broker API](https://github.com/openservicebrokerapi/servicebroker) and is implemented as a set of deployments: 
 
-![Service Catalog Architecture](/images/docs/service-catalog-architecture.svg)
+* Extension API server
+* Controller manager
+* Etcd operator
 
-The *Service Consumer* is the application deployed within Kubernetes that connects with and uses the Service after Service Catalog has dealt with the initial provisioning and binding of the Service.
+It communicates with Service Brokers via the OSB API and acts as an intermediary for the Kubernetes API Server in order to negotiate the initial provisioning and return the credentials necessary for the application to use the Managed Service.
+
+![Service Catalog Architecture](/images/docs/service-catalog-architecture.png)
+
+
+### API Resources
+
+Service Catalog installs the `servicecatalog.k8s.io` API and provides the following Kubernetes resources:
+
+* `ServiceBroker`: An in-cluster representation of a Service Broker, encapsulating its server connection details.
+These are created and managed by Cluster Operators who wish to use that broker server to make new types of Managed Services available within their cluster.
+* `ServiceClass`: A Managed Service offered by a particular Service Broker.
+When a new `ServiceBroker` resource is added to the cluster, the Service Catalog controller connects to the Service Broker to obtain a list of available Managed Services. It then creates a new `ServiceClass` resource corresponding to each Managed Service.
+* `ServiceInstance`: A provisioned instance of a `ServiceClass`.
+These are created by Cluster Operators to make a specific instance of a Managed Service available for use by one or more in-cluster applications.
+When a new `ServiceInstance` resource is created, the Service Catalog controller will connect to the appropriate Service Broker and instruct it to provision the service instance.
+* `ServiceBinding`: Access credentials to a `ServiceInstance`.
+These are created by Cluster Operators who want their applications to make use of a Service `ServiceInstance`.
+Upon creation, the Service Catalog controller will create a Kubernetes `Secret` containing connection details and credentials for the Service Instance, which can be mounted into Pods.
+
+### Mutual TLS encryption
+
+The mutual TLS protocol encrypts communication between the Service Catalog extension API server and the main Kubernetes API server. 
+
+During installation, Service Catalog creates its own certificate authority (CA), and generates its own public and private keys, signed by this CA.
+The CA public certificate is installed into the main API server when Service Catalog registers its API.
+Service Catalog accesses the main API server CA certificate from the API server ConfigMap, after being granted the *extension-apiserver-authentication-reader* role. 
+
+Certificate rotation is handled by exposing a Service Catalog URL, similar to a `/statusz` endpoint, which returns the number of days until the CA and certificates expire.
+Alerts for certificate rotation can be created by monitoring this URL.
+
+### Authentication
+
+Service Catalog supports these methods of authentication: 
+
+* Basic (username/password)
+* [OAuth 2.0 Bearer Token](https://tools.ietf.org/html/rfc6750)
 
 ## Usage
 
-The main Service Catalog operations that can be performed are:
+The Cluster Operator can use the Service Catalog API Resources to provision Managed Services and make them available within the Kubernetes cluster. The steps involved are:
 
-* List -- Query the services available from a Service Broker.
-* Provision -- Request that the Service Broker create a new instance of the Service.
-* Bind -- Request the information and credentials necessary to connect to and utilize the Service.
-* Unbind -- Remove the established binding to the Service.
-* Deprovision -- Notify the Service Broker to release and destroy the instance of the Service.
+1. Add a `ServiceBroker` resource.
+2. List the Managed Services available from a Service Broker.
+3. Provision a new instance of the Managed Service.
+4. Bind to the Managed Service, which returns the connection credentials.
+5. Map the connection credentials into the Kubernetes application.
 
-### Listing Services
+### Adding a ServiceBroker resource
 
-The Open Service Broker API provides a `GET catalog` method to discover and list Services available from a Service Broker. Service Catalog uses this method to query and store that information as a local ServiceClass Resource, which is available to the Service Consumer.
+A `ServiceBroker` resource contains the URL and connection details necessary to access a Service Broker endpoint. It must be created within the `servicecatalog.k8s.io` group.
 
-The flow of API calls is:
+The following is an example of a `ServiceBroker` resource:
 
-1. The Catalog Operator must first add Broker Resources to the Service Catalog API Server. These resources identify available Service Brokers and point to their URL endpoints.
+```yaml
+apiVersion: servicecatalog.k8s.io/v1alpha1
+kind: ServiceBroker
+metadata:
+  name: gcp-broker
+spec:
+  url:  https://servicebroker.googleapis.com/v1alpha1/projects/service-catalog/brokers/default
+  # Describes the secret which contains the short-lived bearer token
+  authInfo:
+    bearer:
+      secretRef:
+        name: gcp-svc-account-secret
+        namespace: service-catalog
+```
+
+### Listing Managed Services
+
+1. The Cluster Operator must first add ServiceBroker Resources to the Service Catalog API Server. These resources identify available Service Brokers and point to their URL endpoints.
 1. Service Catalog then requests a list of Services from the Service Broker.
 1. The Service Broker returns a list of Services to the ServiceClass resource, which is created and persisted in the Service Catalog API Server.
 1. The Service Consumer can then locally query the ServiceClass Resource for a list of available Services.
 
-![List Services](/images/docs/service-catalog-list.svg){:height="80%" width="80%"}
+![List Services](/images/docs/service-catalog-list.png){:height="80%" width="80%"}
 
-### Setting up a Service
-
-*Provision* and *Bind* are used, in that order, to contact a Service Broker, setup a new instance of a Service, and get the information necessary for the Service Consumer to connect with and utilize the Service.
-
-#### Provisioning a new Service
+### Provisioning a new Service
 
 1. The Service Consumer provisions a new instance by sending a POST command to the Service Catalog API Server, which creates and persists an Instance Resource.
 1. Service Catalog then requests an instance from the Service Broker by sending an PUT command.
@@ -62,66 +119,22 @@ The flow of API calls is:
 1. If the creation was successful, the Service Broker returns an HTTP 200 response.
 1. The Service Consumer can then check the status of the instance to see if it is ready.
 
-![Provision a Service](/images/docs/service-catalog-provision.svg){:height="80%" width="80%"}
+![Provision a Service](/images/docs/service-catalog-provision.png){:height="80%" width="80%"}
 
-#### Binding to a Service
+### Binding to a Service
 
 1. The Service Consumer requests a binding to the instance by sending a POST command to the Service Catalog API Server, which creates and persists a Binding Resource.
 1. Service Catalog in turn requests a binding from the Service Broker using a PUT command.
 1. The Service Broker then returns provider-specific information, such as coordinates, credentials, configs, necessary for Kubernetes to connect and access the Service instance.
 1. The binding information and credentials are delivered to the Kubernetes API Server as a set of Kubernetes objects, such as a Service, Secret, ConfigMap, or Pod Preset.
 
-![Bind to a Service](/images/docs/service-catalog-bind.svg){:height="80%" width="80%"}
+![Bind to a Service](/images/docs/service-catalog-bind.png){:height="80%" width="80%"}
 
+### Mapping the connection credentials
 
-### Performing cleanup
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas nisl eget justo eleifend, ac lacinia lectus pellentesque. Donec facilisis, massa suscipit suscipit sollicitudin, augue libero imperdiet lacus, sed hendrerit metus massa mattis nisi. Suspendisse vestibulum massa id hendrerit lacinia. Aliquam eleifend nulla a metus molestie bibendum.
 
-Once a Service instance is no longer needed, it can be released and cleaned up by using  the *Unbind* and *Deprovision* operations.
-
-#### Unbinding the instance
-
-1. The Service Consumer sends a DELETE command to Service Catalog API Server.
-1. Service Catalog in turn sends a DELETE command to the Service Broker.
-1. The Service Broker performs any relevant business logic and removes the binding.
-1. The Service Broker returns an HTTP 202 response, which triggers the Service Catalog Controller to remove any corresponding binding resources from Kubernetes and run any finalization tasks.
-1. The Service Catalog API Server deletes the Binding Resource and returns a response to the Service Consumer.
-
-![Unbind the instance](/images/docs/service-catalog-unbind.svg){:height="80%" width="80%"}
-
-#### Deprovisioning the instance
-
-1. The Service Consumer can then send a DELETE command to the Service Catalog API Server to deprovision the Service instance.
-1. Service Catalog in turn sends a DELETE command to the Service Broker.
-1. The Service Broker deletes the Service instance and performs its own cleanup procedure.
-1. The Service Broker returns an HTTP 202 response, which triggers the Service Catalog Controller run any finalization tasks.
-1. The Service Catalog API Server deletes the Instance Resource and returns a response to the Service Consumer.
-
-![Deprovision the instance](/images/docs/service-catalog-deprovision.svg){:height="80%" width="80%"}
-
-## API Resources
-
-The Service Catalog API provides the following Kubernetes resource types:
-
-* `ServiceBroker`: An in-cluster representation of a broker server. A resource of this
-type encapsulates connection details for that broker server. These are created
-and managed by cluster operators who wish to use that broker server to make new
-types of managed services available within their cluster.
-* `ServiceClass`: A *type* of managed service offered by a particular broker.
-Each time a new `ServiceBroker` resource is added to the cluster, the service catalog
-controller connects to the corresponding broker server to obtain a list of
-service offerings. A new `ServiceClass` resource will automatically be created
-for each.
-* `ServiceInstance`: A provisioned instance of a `ServiceClass`. These are created
-by cluster users who wish to make a new concrete *instance* of some *type* of
-managed service to make that available for use by one or more in-cluster
-applications. When a new `ServiceInstance` resource is created, the service catalog
-controller will connect to the appropriate broker server and instruct it to
-provision the service instance.
-* `ServiceBinding`: Access credential to a `ServiceInstance`. These
-are created by cluster users who wish for their applications to make use of a
-service `ServiceInstance`. Upon creation, the service catalog controller will
-create a Kubernetes `Secret` containing connection details and credentials for
-the service instance. Such `Secret`s can be mounted into pods as usual.
+Sed eu blandit leo. Suspendisse ut laoreet elit. Praesent elementum placerat fringilla. Integer convallis metus felis, vitae pulvinar orci viverra nec. Cras auctor luctus eros, sed fringilla nibh convallis non.
 
 {% endcapture %}
 
