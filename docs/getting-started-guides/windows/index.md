@@ -63,8 +63,8 @@ To build the *kubelet*, run:
 
 1. `cd $GOPATH/src/k8s.io/kubernetes`
 2. Build *kubelet*
-   1. Linux/MacOS: `KUBE_BUILD_PLATFORMS=windows/amd64 make WHAT=cmd/kubelet`
-   2. Windows: `go build cmd/kubelet/kubelet.go`
+   1. Windows: `KUBE_BUILD_PLATFORMS=windows/amd64 make WHAT=cmd/kubelet`
+   2. Linux/MacOS: `go build cmd/kubelet/kubelet.go`
 
 **kube-proxy**
 
@@ -72,8 +72,8 @@ To build *kube-proxy*, run:
 
 1. `cd $GOPATH/src/k8s.io/kubernetes`
 2. Build *kube-proxy*
-   1. Linux/MacOS: `KUBE_BUILD_PLATFORMS=windows/amd64 make WHAT=cmd/kube-proxy`
-   2. Windows: `go build cmd/kube-proxy/proxy.go`
+   1. Windows: `KUBE_BUILD_PLATFORMS=windows/amd64 make WHAT=cmd/kube-proxy`
+   2. Linux/MacOS: `go build cmd/kube-proxy/proxy.go`
 
 ### Route Setup
 The below example setup assumes one Linux and two Windows Server 2016 nodes and a cluster CIDR 192.168.0.0/16
